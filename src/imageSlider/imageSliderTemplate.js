@@ -9,7 +9,7 @@ const ImageSliderTemplate = (props)=>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://picsum.photos/200/60"
+      src="https://picsum.photos/200/60.webp"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -20,7 +20,7 @@ const ImageSliderTemplate = (props)=>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://picsum.photos/id/1/200/60"
+      src="https://picsum.photos/id/50/200/60"
       alt="Second slide"
     />
 

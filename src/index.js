@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import Login from './login'
 import './index.css'
 import ImageSlider from './imageSlider'
+import Table from './table'
 // import table from './table'
 // import fileDialog from './fileDialog'
 // import Graph from './graph'
@@ -33,6 +34,7 @@ const routing = (
 
       <Route exact path="/" component={Login} />
       <Route exact path="/P1" component={ImageSlider} />
+      <Route exact path="/P2" component={Table} />
 
     
   </Router>
