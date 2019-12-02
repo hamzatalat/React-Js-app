@@ -1,12 +1,43 @@
-import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css' 
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Login from './login'
+import './index.css'
+import ImageSlider from './imageSlider'
+// import table from './table'
+// import fileDialog from './fileDialog'
+// import Graph from './graph'
+// import IndexTemplate from './templates/indextemplate'
+import { Route,  BrowserRouter as Router } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import React from 'react';
+
+
+//class Fea extends React.Component {
+//	render(){
+//	return(<div>
+//    <IndexTemplate/>
+//    </div>);
+//}
+//}
+//export default Fea;
+
+
+const routing = (
+  <Router>
+  
+
+      <Route exact path="/" component={Login} />
+      <Route exact path="/P1" component={ImageSlider} />
+
+    
+  </Router>
+)
+
+
+ReactDOM.render(
+	<div >{routing}</div> ,document.getElementById("root"))
