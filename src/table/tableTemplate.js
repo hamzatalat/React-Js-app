@@ -1,38 +1,55 @@
 import Table from 'react-bootstrap/Table'
 import React from "react";
-
-const TablesTemplate=(proops)=> {
+import SideBar from '../sidebar'
+import Footer from '../footer'
+const TablesTemplate=(props)=> {
 
   return (
-  <Table striped bordered hover variant="dark">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </Table>
+  
+     
+
+
+<div className="container">
+        <div className="col-xs-12">
+
+<SideBar/>
+<Table striped bordered hover variant="dark">
+  <thead>
+    <tr>
+    <th>Id</th>
+      <th>Title</th>
+      <th>Status</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+  {props.todos.map((todo) => (
+
+    <tr>
+    <td>{todo.id}</td>
+      <td>{todo.title}</td>
+      
+
+      { todo.completed &&
+                
+                <td>Completed</td>
+                
+      }
+      { !todo.completed &&
+                  <td>Pending</td>
+      }              
+      
+      
+    </tr>
+    ))}
+  </tbody>
+
+</Table>
+<Footer/>
+</div>
+       </div>
+  
 );
 }
 export default TablesTemplate

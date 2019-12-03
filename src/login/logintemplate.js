@@ -1,55 +1,46 @@
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-import {Link } from 'react-router-dom'
 import React from 'react';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-
-const Fill = {
-  minheight: '100%',
-    height: '100%'}
+import { Button} from 'react-bootstrap';
+import Form from 'react-bootstrap/Form'
+import SideBar from '../sidebar'
 
 const LoginTemplate = () => {  
 return(
-	
-	<Container className={Fill}>
-	<Row >
-    <Col lg={{  offset: 4 }}>
-<MDBContainer >
-      <MDBRow>
-        <MDBCol sm="6">
-          <form>
-            <p className="h5 text-center mb-4">Sign in</p>
-            <div className="orange-text">
-              <MDBInput
-                label="Type your email"
-                icon="envelope"
-                group
-                type="email"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Type your password"
-                icon="lock"
-                group
-                type="password"
-                validate
-              />
-            </div>
-            <div className="text-center">
-              <MDBBtn>Login</MDBBtn>
-            </div>
-          </form>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-    </Col>
-  </Row>
-    </Container>
-    
-		   );
+<div>
+
+	 <div className=" h-100">
+    <div className="row align-items-center h-100">
+        <div className="col-6 mx-auto" >
+<SideBar/>
+  <br/>
+  <br/>
+  
+  <h1>Login</h1>
+<Form>
+  <Form.Group controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
+
+  <Form.Group controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="I am not a robot" />
+  </Form.Group>
+  <Button variant="primary" type="submit" href='/P1'>
+    Submit
+  </Button>
+</Form>
+
+
+</div>
+</div>
+</div>	
+</div>	   );
 		}
 
 export default LoginTemplate;

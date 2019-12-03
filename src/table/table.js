@@ -7,33 +7,25 @@ constructor()
 {
 	super();
 	this.state={
-		pictures:[]
+		todos: []
 	};
 }
 componentDidMount()
 {
-	fetch('https://randomuser.me/api/?results=500')
-	.then(results =>
-	{
-		return results.json();
-	}
-	).then(data=>{
-		let pictures=data.results.map((pic)=>{
-				return(
-					<div key = {pic.results}>
-					<img src = {pic.picture.medium}/>
-					</div>
-					)
-			})
-			this.setState({pictures : pictures});
-			console.log("state" , this.state.pictures);
-		})
+	fetch('http://jsonplaceholder.typicode.com/todos')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ todos: data })
+      console.log(this.state.todos)
+    })
+    .catch(console.log)
+  
 	
 }
 render()
 {
   return (
-  <TablesTemplate/>
+  <TablesTemplate todos={this.state.todos}/>
   );
 }
 }

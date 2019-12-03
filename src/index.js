@@ -8,11 +8,9 @@ import Login from './login'
 import './index.css'
 import ImageSlider from './imageSlider'
 import Table from './table'
-// import table from './table'
-// import fileDialog from './fileDialog'
-// import Graph from './graph'
-// import IndexTemplate from './templates/indextemplate'
+import Namechanger from './namechanger'
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
+
 
 
 import React from 'react';
@@ -28,6 +26,7 @@ import React from 'react';
 //export default Fea;
 
 
+
 const routing = (
   <Router>
   
@@ -35,7 +34,7 @@ const routing = (
       <Route exact path="/" component={Login} />
       <Route exact path="/P1" component={ImageSlider} />
       <Route exact path="/P2" component={Table} />
-
+      <Route exact path="/P3" component={Namechanger} />
     
   </Router>
 )

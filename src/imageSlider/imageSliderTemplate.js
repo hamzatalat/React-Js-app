@@ -1,11 +1,15 @@
 import Carousel from 'react-bootstrap/Carousel'
 import React from 'react';
-
+import SideBar from '../sidebar'
+import Footer from '../footer'
 
 const ImageSliderTemplate = (props)=>
 {
 	return(
+    <div >
+    <SideBar/>
 	<Carousel>
+
   <Carousel.Item>
     <img
       className="d-block w-100"
@@ -42,6 +46,8 @@ const ImageSliderTemplate = (props)=>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+<Footer/>
+</div>
 );
 }
 export default ImageSliderTemplate;
