@@ -10,7 +10,7 @@ import ImageSlider from './imageSlider'
 import Table from './table'
 import Namechanger from './namechanger'
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
-
+import Footer from './footer'
 
 
 import React from 'react';
@@ -41,4 +41,6 @@ const routing = (
 
 
 ReactDOM.render(
-	<div >{routing}</div> ,document.getElementById("root"))
+	<div >{routing}
+	<Footer />
+	</div> ,document.getElementById("root"))

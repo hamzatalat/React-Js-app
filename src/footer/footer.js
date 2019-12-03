@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import TimerExample from './footerTemplate'
 import myInitObject from '../globalvar'
-import Namechanger from '../namechanger'
+
 
 
 
@@ -12,34 +12,15 @@ import Namechanger from '../namechanger'
 class Footer extends React.Component{ 
 	constructor(props) { 
     super(props); 
-    if(!this.props.homepage)
-    {
-      console.log("!homepage")
+     
       this.state = { 
       homepage: 'Home',
       pageone: 'P1', 
       pagetwo: 'P2',
-      pagethree: 'P3'
+      pagethree: 'P3'   
     }
-    }
-    else
-    {
-    
-      console.log("Else")
-      console.log(this.props)
-      this.state = { 
-      homepage: this.props.homepage,
-      pageone: this.props.pageone, 
-      pagetwo: this.props.pagetwo,
-      pagethree: this.props.pagethree
-      }
-        
-    }
-
   };
-
-  
-  render(){
+    render(){
 
     return (
     <footer className="app-footer">

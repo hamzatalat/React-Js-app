@@ -3,15 +3,10 @@ import Footer from '../footer'
 
 import SideBar from '../sidebar'
 
-class Namechanger extends React.Component{ 
+class Namechanger extends Footer{ 
 	constructor() { 
-    super(); 
-    this.state = { 
-      homepage: 'Homess',
-      pageone: 'P1', 
-      pagetwo: 'P2',
-      pagethree: 'P3',
-    }
+   super();
+    
     this.changePagehomeName = this.changePagehomeName.bind(this);
     this.changePageoneName = this.changePageoneName.bind(this);
     this.changePagetwoName = this.changePagetwoName.bind(this);
@@ -23,6 +18,7 @@ changePageoneName(param) {
     const value = param.target.value;
     this.setState({pageone: value});
     console.log(this.state.pageone)
+    
   };
   changePagetwoName(param) {
     const value = param.target.value;	
@@ -37,7 +33,7 @@ changePageoneName(param) {
 
   changePagehomeName(param) {
     const value = param.target.value;
-    this.setState({homepage: value});
+    this.setState({homepage: this.state.homepage =value});
     console.log(this.state.homepage);
   };
 
@@ -70,7 +66,7 @@ changePageoneName(param) {
 		          Name For Page three
 		          <input type="text" onChange={this.changePagethreeName} className="screen-row"/>
 		        </label>
-		        <Footer pageone= {this.state.pageone} pagetwo= {this.state.pagetwo} pagethree= {this.state.pagethree} homepage= {this.state.homepage}/>
+		        
 		        </div>
 );
 }
