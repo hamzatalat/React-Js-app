@@ -24,7 +24,10 @@ import React from 'react';
 //}
 //}
 //export default Fea;
-
+var pageone ='P1';
+var pagetwo ='P2';
+var pagethree ='P3';
+var homepage ='Homes';
 
 
 const routing = (
@@ -34,7 +37,7 @@ const routing = (
       <Route exact path="/" component={Login} />
       <Route exact path="/P1" component={ImageSlider} />
       <Route exact path="/P2" component={Table} />
-      <Route exact path="/P3" component={Namechanger} />
+      <Route exact path="/P3" component={() => <Namechanger pageone={pageone} pagetwo={pagetwo} pagethree={pagethree} homepage={homepage}  />}/>
     
   </Router>
 )
@@ -42,5 +45,5 @@ const routing = (
 
 ReactDOM.render(
 	<div >{routing}
-	<Footer />
+	<Footer pageone={pageone} pagetwo={pagetwo} pagethree={pagethree} homepage={homepage}/>
 	</div> ,document.getElementById("root"))

@@ -46,7 +46,7 @@ const ImageSliderTemplate = (props)=>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-<Footer/>
+
 </div>
 );
 }

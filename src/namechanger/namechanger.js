@@ -4,39 +4,6 @@ import Footer from '../footer'
 import SideBar from '../sidebar'
 
 class Namechanger extends Footer{ 
-	constructor() { 
-   super();
-    
-    this.changePagehomeName = this.changePagehomeName.bind(this);
-    this.changePageoneName = this.changePageoneName.bind(this);
-    this.changePagetwoName = this.changePagetwoName.bind(this);
-    this.changePagethreeName = this.changePagethreeName.bind(this);
-
-  }
-
-changePageoneName(param) {
-    const value = param.target.value;
-    this.setState({pageone: value});
-    console.log(this.state.pageone)
-    
-  };
-  changePagetwoName(param) {
-    const value = param.target.value;	
-    this.setState({pagetwo: value});
-    console.log(this.state.pagetwo);
-  };
-  changePagethreeName(param) {
-    const value = param.target.value;
-    this.setState({pagethree: value});
-    console.log(this.state.pagethree);
-  };
-
-  changePagehomeName(param) {
-    const value = param.target.value;
-    this.setState({homepage: this.state.homepage =value});
-    console.log(this.state.homepage);
-  };
-
 
 
     render(){
