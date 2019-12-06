@@ -11,10 +11,44 @@ import Table from './table'
 import Namechanger from './namechanger'
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
 import Footer from './footer'
-
-
 import React from 'react';
+import { createStore } from 'redux';
 
+
+
+//const {createStore}=Redux;
+
+
+const initState={
+	pageone :'P1',
+ pagetwo :'P2',
+ pagethree :'P3',
+ homepage :'Homes'
+
+}
+function myreducer(state=initState,action)
+{ 
+	if(action.type == 'Change the veriables')
+	{	
+		return
+		{
+			pageone=action.pageone
+		}
+	}
+	 
+}
+
+const store =createStore(myreducer)
+
+store.subscribe(() =>{
+
+	console.log('state updated')
+	console.log(store.getState())
+})
+
+const changeAction = {type:'Change the veriables', pageone: 'but milk' }
+
+store.dispatch(changeAction)
 
 //class Fea extends React.Component {
 //	render(){
