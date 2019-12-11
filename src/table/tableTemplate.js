@@ -46,7 +46,6 @@ const TablesTemplate=(props)=> {
   </tbody>
 
 </Table>
-<Footer/>
 </div>
        </div>
   

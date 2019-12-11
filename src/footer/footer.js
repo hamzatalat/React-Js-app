@@ -5,6 +5,13 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import TimerExample from './footerTemplate'
 import myInitObject from '../globalvar'
 
+import { connect } from "react-redux";
+/*import {
+ addFooter
+} from "../actions/actionCreator";*/
+//import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from "../actions/actionsTypes";
+import { bindActionCreators } from "redux";
+
 
 
 
@@ -12,54 +19,7 @@ import myInitObject from '../globalvar'
 class Footer extends React.Component{ 
 constructor(props) { 
     super(props); 
-
-      this.state = { 
-      homepage: 'Home',
-      pageone: 'P1', 
-      pagetwo: 'P2',
-      pagethree: 'P3'
-    }
-    
-
-    this.changePagehomeName = this.changePagehomeName.bind(this);
-    this.changePageoneName = this.changePageoneName.bind(this);
-    this.changePagetwoName = this.changePagetwoName.bind(this);
-    this.changePagethreeName = this.changePagethreeName.bind(this);
-
-  }
-
-changePageoneName=(param)=> {
-    //var that=this;
-    const value = param.target.value;
-    this.setState({pageone: param.target.value});
-    this.forceUpdate()
-    console.log(this.state.pageone)
-    this.forceUpdate();
-    this.render();
-    console.log('force re render called')
-
-
-    
-  };
-  changePagetwoName(param) {
-    const value = param.target.value; 
-    this.setState({pagetwo: value});
-    console.log(this.state.pagetwo);
-  };
-  changePagethreeName(param) {
-    const value = param.target.value;
-    this.setState({pagethree: value});
-    console.log(this.state.pagethree);
-  };
-
-  changePagehomeName(param) {
-    const value = param.target.value;
-    this.setState({homepage: value});
-    console.log(this.state.homepage);
-  };
-
-
-
+}
 
 
 
@@ -71,19 +31,29 @@ changePageoneName=(param)=> {
     <footer className="app-footer">
 <div className="d-flex flex-column">
   <ButtonGroup size="lg">
-  <Button variant="dark" href="/">{this.state.homepage}</Button>
-  <Button variant="dark" href="/P1">{this.state.pageone}</Button>
-  <Button variant="dark" href="/P2">{this.state.pagetwo}</Button>
-  <Button variant="dark" href="/P3">{this.state.pagethree}</Button>
+  <Button variant="dark" href="/">{this.props.homepage}</Button>
+  <Button variant="dark" href="/P1">{this.props.pageone}</Button>
+  <Button variant="dark" href="/P2">{this.props.pagetwo}</Button>
+  <Button variant="dark" href="/P3">{this.props.pagethree}</Button>
   <TimerExample start={Date.now()} />
   </ButtonGroup>
 
   </div>
 </footer>
-<span>{this.state.pageone}</span>
+<span>{this.props.pageone}</span>
 </div>
 );
 }
 }
 
-  export default Footer
+const mapStateToProps = state =>{
+  //console.log(state)
+  return {
+    pageone : state.AddFooter[0].pageone,
+    pagetwo : state.AddFooter[0].pagetwo,
+    pagethree : state.AddFooter[0].pagethree,
+    homepage : state.AddFooter[0].homepage,
+  };
+}
+
+  export default connect(mapStateToProps)(Footer);

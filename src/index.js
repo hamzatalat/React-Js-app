@@ -12,15 +12,17 @@ import Namechanger from './namechanger'
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
 import Footer from './footer'
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux'
+import { Provider } from 'react-redux'
+
+import MainReducer from './Reducer/MainReducer'
 
 
 
-//const {createStore}=Redux;
 
-
+/*
 const initState={
-	pageone :'P1',
+ pageone :'P1',
  pagetwo :'P2',
  pagethree :'P3',
  homepage :'Homes'
@@ -48,7 +50,7 @@ store.subscribe(() =>{
 
 const changeAction = {type:'Change the veriables', pageone: 'but milk' }
 
-store.dispatch(changeAction)
+store.dispatch(changeAction)*/
 
 //class Fea extends React.Component {
 //	render(){
@@ -58,6 +60,7 @@ store.dispatch(changeAction)
 //}
 //}
 //export default Fea;
+
 var pageone ='P1';
 var pagetwo ='P2';
 var pagethree ='P3';
@@ -71,13 +74,15 @@ const routing = (
       <Route exact path="/" component={Login} />
       <Route exact path="/P1" component={ImageSlider} />
       <Route exact path="/P2" component={Table} />
-      <Route exact path="/P3" component={() => <Namechanger pageone={pageone} pagetwo={pagetwo} pagethree={pagethree} homepage={homepage}  />}/>
+      //<Route exact path="/P3" component={() => <Namechanger  />}/>
     
   </Router>
 )
 
+const store = compose(window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)(MainReducer)
 
-ReactDOM.render(
+
+ReactDOM.render(<Provider store={store}>
 	<div >{routing}
-	<Footer pageone={pageone} pagetwo={pagetwo} pagethree={pagethree} homepage={homepage}/>
-	</div> ,document.getElementById("root"))
+	<Footer />
+	</div></Provider> ,document.getElementById("root"))
