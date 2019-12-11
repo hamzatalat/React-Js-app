@@ -63,8 +63,6 @@ const AddFooter = (state=INITIAL_DATA, action) => {
                 homepage: action.text
             }
             ]    
-
-
         default:
         return state
     }
