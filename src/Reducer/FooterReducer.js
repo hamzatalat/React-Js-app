@@ -13,7 +13,7 @@ const INITIAL_DATA =  [
  //const INITIAL_DATA
 
 const AddFooter = (state=INITIAL_DATA, action) => {
-    console.log(state)
+    //console.log(state)
     switch (action.type){
 
 

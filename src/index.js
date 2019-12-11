@@ -12,7 +12,7 @@ import Namechanger from './namechanger'
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
 import Footer from './footer'
 import React from 'react';
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 
 import MainReducer from './Reducer/MainReducer'
@@ -20,51 +20,6 @@ import MainReducer from './Reducer/MainReducer'
 
 
 
-/*
-const initState={
- pageone :'P1',
- pagetwo :'P2',
- pagethree :'P3',
- homepage :'Homes'
-
-}
-function myreducer(state=initState,action)
-{ 
-	if(action.type == 'Change the veriables')
-	{	
-		return
-		{
-			pageone=action.pageone
-		}
-	}
-	 
-}
-
-const store =createStore(myreducer)
-
-store.subscribe(() =>{
-
-	console.log('state updated')
-	console.log(store.getState())
-})
-
-const changeAction = {type:'Change the veriables', pageone: 'but milk' }
-
-store.dispatch(changeAction)*/
-
-//class Fea extends React.Component {
-//	render(){
-//	return(<div>
-//    <IndexTemplate/>
-//    </div>);
-//}
-//}
-//export default Fea;
-
-var pageone ='P1';
-var pagetwo ='P2';
-var pagethree ='P3';
-var homepage ='Homes';
 
 
 const routing = (
@@ -74,7 +29,7 @@ const routing = (
       <Route exact path="/" component={Login} />
       <Route exact path="/P1" component={ImageSlider} />
       <Route exact path="/P2" component={Table} />
-      //<Route exact path="/P3" component={() => <Namechanger  />}/>
+      <Route exact path="/P3" component={() => <Namechanger  />}/>
     
   </Router>
 )

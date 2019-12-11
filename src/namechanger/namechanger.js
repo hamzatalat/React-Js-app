@@ -1,13 +1,11 @@
 import React from 'react';
-import Footer from '../footer'
 
 import SideBar from '../sidebar'
 import { connect } from "react-redux";
 import {
  addFooter ,addFooter2 , addFooter3 , addFooter0
 } from "../actions/actionCreater";
-import { ADD_FOOTER_P1 } from "../actions/actionsTypes";
-import { ADD_FOOTER_P2 ,ADD_FOOTER_P3 ,ADD_FOOTER_P0 } from "../actions/actionsTypes";
+
 import { bindActionCreators } from "redux";
 
 class Namechanger extends React.Component { 

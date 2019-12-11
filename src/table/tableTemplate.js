@@ -1,7 +1,6 @@
 import Table from 'react-bootstrap/Table'
 import React from "react";
 import SideBar from '../sidebar'
-import Footer from '../footer'
 const TablesTemplate=(props)=> {
 
   return (

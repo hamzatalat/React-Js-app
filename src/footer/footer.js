@@ -3,23 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import TimerExample from './footerTemplate'
-import myInitObject from '../globalvar'
 
 import { connect } from "react-redux";
-/*import {
- addFooter
-} from "../actions/actionCreator";*/
-//import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from "../actions/actionsTypes";
-import { bindActionCreators } from "redux";
 
 
 
 
 
 class Footer extends React.Component{ 
-constructor(props) { 
-    super(props); 
-}
+
 
 
 
