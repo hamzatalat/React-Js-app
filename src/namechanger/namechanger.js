@@ -29,10 +29,7 @@ constructor(props) {
 
 changePageoneName=(param)=> {
     const value = param.target.value;
-    this.props.addFooter(value); 
-
-    // console.log(this.props.pagetwo)
-    // this.props.addFooter2(this.props.pagetwo);
+    this.props.addFooter(value);
   };
 
 
@@ -52,19 +49,7 @@ changePageoneName=(param)=> {
     this.props.addFooter0(value);
   };
 
-
-
-
-
-
-
-
-
-
-          
-    
-
-    render(){
+render(){
     return (
     	<div>
     	<SideBar/>
@@ -96,27 +81,10 @@ changePageoneName=(param)=> {
 );
 }
 }
-
- // export default Namechanger
-
-
-  const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         addFooter , addFooter2 ,addFooter3 , addFooter0
     }, dispatch)
 }
-
-// const mapStateToProps = state =>{
-//   return {
-//     pageone : state.AddFooter[0].pageone,
-//     pagetwo : state.AddFooter[0].pagetwo,
-//     pagethree : state.AddFooter[0].pagethree,
-//     homepage : state.AddFooter[0].homepage,
-//   };
-// }
-
-
-
-
 
 export default connect(null, mapDispatchToProps)(Namechanger)

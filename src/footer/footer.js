@@ -39,7 +39,7 @@ class Footer extends React.Component{
 }
 
 const mapStateToProps = state =>{
-  //console.log(state)
+  console.log(state)
   return {
     pageone : state.AddFooter[0].pageone,
     pagetwo : state.AddFooter[0].pagetwo,

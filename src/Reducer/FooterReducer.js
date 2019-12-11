@@ -6,14 +6,14 @@ const INITIAL_DATA =  [
          pageone: 'P1',
          pagetwo: 'P2',
          pagethree: 'P3',
-         homepage: 'Homes',
+         homepage: 'Home',
      }
  ];
 
- //const INITIAL_DATA
 
 const AddFooter = (state=INITIAL_DATA, action) => {
-    //console.log(state)
+    console.log("this is footer state")
+    console.log(state)
     switch (action.type){
 
 
@@ -21,8 +21,6 @@ const AddFooter = (state=INITIAL_DATA, action) => {
 
         return[ 
 			{
-                
-                ...state,
                 pageone: action.text,
                 pagetwo: state[0].pagetwo,
          		pagethree: state[0].pagethree,
